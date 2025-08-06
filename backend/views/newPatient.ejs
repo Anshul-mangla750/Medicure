@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Patient</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+<div class="container py-4">
+    <h2 class="mb-4 fw-bold">Add New Patient</h2>
+    <form action="/patients" method="POST" class="card p-4 shadow-sm">
+        <div class="row mb-3">
+            <div class="col-md-6 mb-3">
+                <label class="form-label">Name</label>
+                <input name="name" type="text" class="form-control" required>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label class="form-label">Phone</label>
+                <input name="phone" type="text" class="form-control" required>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label class="form-label">Department</label>
+                <select name="department" class="form-select" required>
+                    <option value="">Select Department</option>
+                    <option>Cardiology</option>
+                    <option>Dermatology</option>
+                    <option>Orthopedics</option>
+                    <option>Neurology</option>
+                    <option>Pediatrics</option>
+                </select>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label class="form-label">Appointment Time</label>
+                <input name="appointmentTime" type="text" class="form-control" placeholder="e.g. 09:30 AM" required>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label class="form-label">Status</label>
+                <select name="status" class="form-select" required>
+                    <option value="waiting">Waiting</option>
+                    <option value="in-progress">In Progress</option>
+                    <option value="completed">Completed</option>
+                </select>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label class="form-label">Priority</label>
+                <select name="priority" class="form-select" required>
+                    <option value="normal">Normal</option>
+                    <option value="urgent">Urgent</option>
+                </select>
+            </div>
+            <div class="col-md-2 mb-3">
+                <label class="form-label">Wait Time</label>
+                <input name="waitTime" type="text" class="form-control" placeholder="e.g. 25 min" required>
+            </div>
+            <div class="col-md-2 mb-3">
+                <label class="form-label">Position</label>
+                <input name="position" type="number" class="form-control" required>
+            </div>
+        </div>
+        <div class="d-flex justify-content-between">
+            <a href="/patients" class="btn btn-secondary">Cancel</a>
+            <button type="submit" class="btn btn-success">Add Patient</button>
+        </div>
+    </form>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

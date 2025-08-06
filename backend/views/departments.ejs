@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Departments</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .dept-card { min-width: 320px; margin-bottom: 2rem; }
+    .progress-bar { height: 8px; }
+  </style>
+</head>
+<body class="bg-light">
+<div class="container py-4">
+  <h2 class="mb-4 fw-bold">Departments</h2>
+  <ul class="nav nav-tabs mb-3">
+    <li class="nav-item">
+      <a class="nav-link" href="/patients">Patient Queue</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" href="/departments">Departments</a>
+    </li>
+  </ul>
+  <div class="row">
+    <% departments.forEach(dept => { %>
+      <div class="col-md-6 col-lg-4">
+        <div class="card dept-card shadow-sm">
+          <div class="card-body">
+            <h4 class="card-title mb-3"><%= dept.name %></h4>
+            <div class="mb-2">
+              <span class="text-secondary">Current Patients:</span>
+              <span class="fw-bold ms-2"><%= dept.current %></span>
+            </div>
+            <div class="mb-2">
+              <span class="text-secondary">Waiting:</span>
+              <span class="fw-bold ms-2 text-warning"><%= dept.waiting %></span>
+            </div>
+            <div class="mb-3">
+              <span class="text-secondary">Avg Wait:</span>
+              <span class="fw-bold ms-2"><%= dept.avgWait %></span>
+            </div>
+           
+          </div>
+        </div>
+      </div>
+    <% }) %>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

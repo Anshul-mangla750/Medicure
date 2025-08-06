@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OPD Queue Management</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .card-patient { margin-bottom: 1rem; }
+        .badge-status { font-size: 0.9em; }
+        .search-bar { margin-bottom: 1.5rem; }
+        .dashboard-card { min-width: 180px; }
+    </style>
+</head>
+<body class="bg-light">
+<div class="container py-4">
+    <h2 class="mb-4 fw-bold">OPD Queue Management</h2>
+    <!-- Dashboard Cards -->
+    <div class="row mb-4">
+        <div class="col dashboard-card">
+            <div class="card text-center shadow-sm">
+                <div class="card-body">
+                    <div class="fs-4 fw-bold"><%= patients.length %></div>
+                    <div>Total Patients</div>
+                </div>
+            </div>
+        </div>
+        <div class="col dashboard-card">
+            <div class="card text-center shadow-sm">
+                <div class="card-body">
+                    <div class="fs-4 fw-bold text-warning">
+                        <%= patients.filter(p => p.status === 'waiting').length %>
+                    </div>
+                    <div>Waiting</div>
+                </div>
+            </div>
+        </div>
+        <div class="col dashboard-card">
+            <div class="card text-center shadow-sm">
+                <div class="card-body">
+                    <div class="fs-4 fw-bold text-primary">
+                        <%= patients.filter(p => p.status === 'in-progress').length %>
+                    </div>
+                    <div>In Progress</div>
+                </div>
+            </div>
+        </div>
+        <div class="col dashboard-card">
+            <div class="card text-center shadow-sm">
+                <div class="card-body">
+                    <div class="fs-4 fw-bold text-success">
+                        <%= patients.filter(p => p.status === 'completed').length %>
+                    </div>
+                    <div>Completed</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Tabs -->
+    <ul class="nav nav-tabs mb-3">
+        <li class="nav-item">
+            <a class="nav-link active" href="#">Patient Queue</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/departments">Departments</a>
+        </li>
+    </ul>
+    <!-- Search and Filters -->
+    <div class="row align-items-center search-bar">
+        <div class="col-md-6 mb-2 mb-md-0">
+            <input type="text" class="form-control" placeholder="Search by name or token ID...">
+        </div>
+        <div class="col-md-3 mb-2 mb-md-0">
+            <select class="form-select">
+                <option>All Departments</option>
+                <!-- Add department options dynamically if needed -->
+            </select>
+        </div>
+        <div class="col-md-3">
+            <select class="form-select">
+                <option>All Status</option>
+                <option>Waiting</option>
+                <option>In Progress</option>
+                <option>Completed</option>
+            </select>
+        </div>
+    </div>
+    <!-- Patient Cards -->
+    <% patients.forEach(patient => { %>
+        <div class="card card-patient shadow-sm">
+            <div class="card-body d-flex align-items-center">
+                <div class="me-3">
+                    <span class="bg-success bg-opacity-10 rounded-circle p-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#198754" class="bi bi-person" viewBox="0 0 16 16">
+                          <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm4-3a4 4 0 1 1-8 0 4 4 0 0 1 8 0z"/>
+                          <path d="M2 13s-1 0-1-1 1-4 7-4 7 3 7 4-1 1-1 1H2zm13-1c0-1-4-4-7-4s-7 3-7 4c0 .5.5 1 1 1h12c.5 0 1-.5 1-1z"/>
+                        </svg>
+                    </span>
+                </div>
+                <div class="flex-grow-1">
+                    <div class="fw-bold fs-5"><%= patient.name %> </div>
+                    <div class="text-muted mb-1">
+                        <span class="me-3"><i class="bi bi-telephone"></i> <%= patient.phone %></span>
+                        <span><i class="bi bi-calendar"></i> <%= patient.appointmentTime %></span>
+                    </div>
+                    <div class="row">
+                        <div class="col-auto">
+                            <div class="small text-secondary">Department</div>
+                            <div class="fw-semibold"><%= patient.department %></div>
+                        </div>
+                        <div class="col-auto">
+                            <div class="small text-secondary">Position</div>
+                            <div class="fw-semibold">#<%= patient.position %></div>
+                        </div>
+                        <div class="col-auto">
+                            <div class="small text-secondary">Wait Time</div>
+                            <div class="fw-semibold"><%= patient.waitTime %></div>
+                        </div>
+                        <div class="col-auto">
+                            <span class="badge badge-status 
+                                <% if(patient.status === 'waiting'){ %> bg-warning text-dark <% } %>
+                                <% if(patient.status === 'in-progress'){ %> bg-primary <% } %>
+                                <% if(patient.status === 'completed'){ %> bg-success <% } %>
+                            ">
+                                <%= patient.status %>
+                            </span>
+                            <span class="badge badge-status 
+                                <% if(patient.priority === 'urgent'){ %> bg-danger <% } else { %> bg-secondary <% } %>
+                            ">
+                                <%= patient.priority %>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="ms-3 text-end">
+                    <% if(patient.status === 'waiting' || patient.status === 'in-progress'){ %>
+                        <button class="btn btn-outline-success btn-sm mb-2">Call Next</button><br>
+                    <% } %>
+                    <a href="/patients/<%= patient.id %>/edit" class="btn btn-outline-primary btn-sm mb-2">Edit</a><br>
+                    <form action="/patients/<%= patient.id %>/delete" method="POST" style="display:inline;">
+                        <button type="submit" class="btn btn-outline-danger btn-sm">Delete</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    <% }) %>
+    <div class="mt-3">
+        <a href="/patients/new" class="btn btn-success">+ Add Patient</a>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Bootstrap Icons CDN -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+</body>
+</html>
