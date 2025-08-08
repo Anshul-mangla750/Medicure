@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Inventory Management</title>
+  <link rel="stylesheet" href="/css/doctors.css">
+</head>
+<body>
+  <h1>Doctors Management</h1>
+
+  <div class="stats">
+    <div>Total Doctors: <%= totalItems %></div>
+  </div>
+
+  <h2>Add new Doctors</h2>
+  <form action="/doctors/add" method="POST">
+    <input name="name" placeholder="Full Name" required />
+    <input name="department" placeholder="Department" required />
+    <input name="qualifications" placeholder="Qualifications" required />
+    <button type="submit">Add</button>
+  </form>
+
+  <h2>Doctors Details</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Department</th>
+        <th>Qualifications</th>
+        <th>Last Updated</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% items.forEach(item => { %>
+        <tr>
+          <td><%= item.name %></td>
+          <td><%= item.department %></td>
+          <td><%= item.qualifications %></td>
+          <td><%= item.createdAt ? item.createdAt.toDateString() : 'N/A' %></td>
+          <td>
+            <a href="/doctors/edit/<%= item._id %>">Edit</a>
+            <form action="/doctors/delete/<%= item._id %>" method="POST" style="display:inline;">
+              <button type="submit" onclick="return confirm('Delete this item?')">Delete</button>
+            </form>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</body>
+</html>

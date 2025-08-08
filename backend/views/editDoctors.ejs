@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Edit Inventory Item</title>
+  <link rel="stylesheet" href="/css/doctors.css">
+</head>
+<body>
+  <h1>✏️ Edit Inventory Item</h1>
+
+  <form action="/doctors/edit/<%= item._id %>" method="POST">
+  
+    <div>
+      <label>Name:</label>
+      <input name="name" value="<%= item.name %>" required />
+    </div>
+    <div>
+      <label>Department:</label>
+      <input name="category" value="<%= item.department %>" required />
+    </div>
+    <div>
+      <label>Qualifications:</label>
+      <input name="stock" type="text" value="<%= item.qualifications %>" required />
+    </div>
+
+    <button type="submit">✅ Update Item</button>
+    <a href="/doctors">← Back to Inventory</a>
+  </form>
+</body>
+</html>

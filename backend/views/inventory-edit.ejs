@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Edit Inventory Item</title>
+  <link rel="stylesheet" href="/css/inventory.css">
+</head>
+<body>
+  <h1>✏️ Edit Inventory Item</h1>
+
+  <form action="/inventory/edit/<%= item._id %>" method="POST">
+    <div>
+      <label>Item ID:</label>
+      <input name="itemId" value="<%= item.itemId %>" required />
+    </div>
+    <div>
+      <label>Name:</label>
+      <input name="name" value="<%= item.name %>" required />
+    </div>
+    <div>
+      <label>Category:</label>
+      <input name="category" value="<%= item.category %>" required />
+    </div>
+    <div>
+      <label>Stock:</label>
+      <input name="stock" type="number" value="<%= item.stock %>" required />
+    </div>
+    <div>
+      <label>Unit:</label>
+      <input name="unit" value="<%= item.unit %>" required />
+    </div>
+
+    <button type="submit">✅ Update Item</button>
+    <a href="/inventory">← Back to Inventory</a>
+  </form>
+</body>
+</html>
