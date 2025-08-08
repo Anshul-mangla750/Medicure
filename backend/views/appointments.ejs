@@ -1,0 +1,63 @@
+
+
+<section class="form-section">
+    <h2>Book New Appointment</h2>
+    <form action="/appointments/book" method="POST">
+        <label>Doctor</label>
+        <select name="doctorId" required>
+            <% doctors.forEach(doc => { %>
+                <option value="<%= doc._id %>"><%= doc.name %> - <%= doc.department %></option>
+            <% }) %>
+        </select>
+
+        <label>Department</label>
+        <input type="text" name="department" placeholder="Department" required>
+
+        <label>Date</label>
+        <input type="date" name="date" required>
+
+        <label>Time</label>
+        <input type="time" name="time" required>
+
+        <button type="submit" class="btn btn-primary">Book Appointment</button>
+    </form>
+</section>
+
+<section class="list-section">
+    <h2>All Appointments</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Doctor</th>
+                <th>Department</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% appointments.forEach(app => { %>
+                <tr>
+                    <td><%= app.doctor.name %></td>
+                    <td><%= app.department %></td>
+                    <td><%= app.date %></td>
+                    <td><%= app.time %></td>
+                    <td><%= app.status %></td>
+                    <td>
+                        <form action="/appointments/cancel/<%= app._id %>" method="POST" style="display:inline-block;">
+                            <button type="submit" class="btn btn-danger">Cancel</button>
+                        </form>
+                        <form action="/appointments/reschedule/<%= app._id %>" method="POST" style="display:inline-block;">
+                            <input type="date" name="date" required>
+                            <input type="time" name="time" required>
+                            <button type="submit" class="btn btn-warning">Reschedule</button>
+                        </form>
+                    </td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</section>
+
+

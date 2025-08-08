@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Inventory Management</title>
+  <link rel="stylesheet" href="/css/inventory.css">
+</head>
+<body>
+  <h1>Inventory Management</h1>
+
+  <div class="stats">
+    <div>Total Items: <%= totalItems %></div>
+    <div>Low Stock Items: <%= lowStockItems %></div>
+    <div>Out of Stock Items: <%= outOfStockItems %></div>
+    <div>Recent Additions: <%= recentAdditions %></div>
+  </div>
+
+  <h2>Add Inventory Item</h2>
+  <form action="/inventory/add" method="POST">
+    <input name="itemId" placeholder="Item ID" required />
+    <input name="name" placeholder="Item Name" required />
+    <input name="category" placeholder="Category" required />
+    <input name="stock" type="number" placeholder="Stock Level" required />
+    <input name="unit" placeholder="Unit" required />
+    <button type="submit">Add</button>
+  </form>
+
+  <h2>Current Stock Levels</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Item ID</th>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Stock</th>
+        <th>Unit</th>
+        <th>Status</th>
+        <th>Last Updated</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% items.forEach(item => { %>
+        <tr>
+          <td><%= item.itemId %></td>
+          <td><%= item.name %></td>
+          <td><%= item.category %></td>
+          <td><%= item.stock %></td>
+          <td><%= item.unit %></td>
+          <td>
+            <% if (item.stock === 0) { %>
+              <span style="color: red;">Out of Stock</span>
+            <% } else if (item.stock <= 20) { %>
+              <span style="color: orange;">Low Stock</span>
+            <% } else { %>
+              <span style="color: green;">In Stock</span>
+            <% } %>
+          </td>
+          <td><%= item.createdAt ? item.createdAt.toDateString() : 'N/A' %></td>
+          <td>
+            <a href="/inventory/edit/<%= item._id %>">Edit</a>
+            <form action="/inventory/delete/<%= item._id %>" method="POST" style="display:inline;">
+              <button type="submit" onclick="return confirm('Delete this item?')">Delete</button>
+            </form>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</body>
+</html>
