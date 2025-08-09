@@ -1,0 +1,109 @@
+/* style.css */
+body {
+    font-family: 'Segoe UI', sans-serif;
+}
+.logo-img {
+    height: 40px;
+    max-width: 180px;
+    width: auto;
+    object-fit: contain;
+}
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+.hero-bg {
+    background-color: #e6fcff;
+}
+
+.gradient-bg {
+    background: linear-gradient(to right, #1cc5dc, #8c52ff);
+}
+
+.btn-info {
+    background-color: #00bcd4;
+    border: none;
+}
+
+.btn-outline-secondary {
+    border-color: #00bcd4;
+    color: #00bcd4;
+}
+
+.btn-outline-secondary:hover {
+    background-color: #00bcd4;
+    color: white;
+}
+@media (max-width: 576px) {
+    .hero-bg {
+        padding: 3rem 1rem !important;
+    }
+}
+section img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.btn {
+    border-radius: 2rem;
+}
+/* Logo Styling */
+.logo-img {
+    height: 60px;       
+    width: auto;
+    object-fit: contain;
+       
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+/* Mobile View Adjustment */
+@media (max-width: 576px) {
+    .logo-img {
+        height: 50px;   
+        margin-left: 3px;
+    }
+}
+
+
+
+#Patient-Login{
+    border-radius: 2rem;
+    padding: 0.5rem 1.5rem;
+}
+#Doctor-Login{
+    border-radius: 2rem;
+    padding: 0.5rem 1.5rem;
+}
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Why Choose Section */
+section.bg-benefits {
+    background-color: #e6f6ee;
+}
+
+section.bg-integration {
+    background-color: #ffffff;
+}
+
+/* CTA Gradient */
+.cta-gradient {
+    background: linear-gradient(to right, #0ea5e9, #34d399);
+}
+
+/* Footer Background */
+.footer-bg {
+    background-color: #0369a1;
+}
+
+.footer-bg a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediCure - Hospital Management</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container">
+
+            <!-- Logo -->
+            <a class="navbar-brand fw-bold" href="#">
+                <img src="MediCure_Logo.jpg" alt="MediCure Logo" class="logo-img me-2">
+            </a>
+
+            <!-- Mobile Toggle -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navbar Links -->
+            <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                </ul>
+
+                <!-- Search Bar -->
+                <form class="d-flex me-3">
+                    <div class="input-group w-75 mx-auto">
+                        <span class="input-group-text bg-white border-end-0">
+                            <i class="bi bi-search"></i>
+                        </span>
+                        <input type="text" class="form-control border-start-0"
+                            placeholder="Search for doctors or departments">
+                    </div>
+                </form>
+
+                <!-- Buttons -->
+                <a href="#" class="btn btn-outline-primary me-2">Login</a>
+                <a href="#" class="btn btn-primary">Sign Up</a>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Hero Section -->
+    <section class="py-5 text-center hero-bg">
+        <div class="container">
+            <h1 class="fw-bold">MediCure: Revolutionizing Hospital Management</h1>
+            <p class="lead mb-4">A comprehensive web platform designed to streamline hospital operations, enhance
+                patient care, and empower medical professionals with real-time data and efficient workflows.</p>
+            <div>
+                <a href="#" class="btn btn-info text-white me-3" id="Patient-Login">Patient Login</a>
+                <a href="#" class="btn btn-outline-secondary" id="Doctor-Login">Doctor/Admin Login</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Key Features</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="text-center p-4 border rounded shadow-sm h-100">
+                        <i class="bi bi-check-circle fs-1 text-primary mb-3"></i>
+                        <h5>Efficient OPD Queue Management</h5>
+                        <p>Streamline patient flow with real-time queue status, automated token generation, and doctor
+                            availability updates, reducing wait times and improving patient satisfaction.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-center p-4 border rounded shadow-sm h-100">
+                        <i class="bi bi-hospital fs-1 text-primary mb-3"></i>
+                        <h5>Real-time Bed Availability</h5>
+                        <p>Instantly track bed occupancy across all departments, ensuring optimal resource allocation
+                            and quicker patient placement.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-center p-4 border rounded shadow-sm h-100">
+                        <i class="bi bi-folder2-open fs-1 text-primary mb-3"></i>
+                        <h5>Comprehensive Patient Records</h5>
+                        <p>Digitize patient information, upload documents, and manage medical histories securely for
+                            seamless admissions and treatment planning.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-center p-4 border rounded shadow-sm h-100">
+                        <i class="bi bi-calendar-check fs-1 text-primary mb-3"></i>
+                        <h5>Streamlined Appointment Booking</h5>
+                        <p>Allow patients to book, reschedule, or cancel appointments with preferred doctors or
+                            departments anytime, anywhere.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-center p-4 border rounded shadow-sm h-100">
+                        <i class="bi bi-lightning fs-1 text-primary mb-3"></i>
+                        <h5>Swift Emergency Admissions</h5>
+                        <p>Prioritize urgent cases with emergency admission protocols ensuring efficient bed assignments
+                            for critical patients.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-center p-4 border rounded shadow-sm h-100">
+                        <i class="bi bi-box-seam fs-1 text-primary mb-3"></i>
+                        <h5>Smart Inventory Management</h5>
+                        <p>Automate medical supplies tracking, receive reorder alerts, and gain full visibility into
+                            your supply chain to prevent shortages and optimize costs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Role-Based Access -->
+    <section class="py-5 bg-light">
+        <div class="container text-center">
+            <h2 class="mb-5">MediCure for Every Role</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="p-4 border rounded shadow-sm h-100">
+                        <img src="For_Patients.png" class="mb-3" alt="Patients">
+                        <h5>For Patients</h5>
+                        <p>Access dashboard, book appointments, check queue status, and manage health records
+                            effortlessly.</p>
+                        <a href="#" class="btn btn-outline-primary">Patient Login</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-4 border rounded shadow-sm h-100">
+                        <img src="For_Doctors.png" class="mb-3" alt="Doctors">
+                        <h5>For Doctors</h5>
+                        <p>Manage OPD queues, view patient records, and optimize schedules with intuitive tools.</p>
+                        <br>
+                        <a href="#" class="btn btn-outline-primary">Doctor Login</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-4 border rounded shadow-sm h-100">
+                        <img src="For_Administrators.png" class="mb-3" alt="Admins">
+                        <h5>For Administrators</h5>
+                        <p>Oversee bed management, inventory, and overall hospital operations from a centralized
+                            dashboard.</p>
+                        <a href="#" class="btn btn-outline-primary">Admin Login</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose HealthcareOS -->
+    <section class="py-5" style="background-color: #e6f6ee;">
+        <div class="container text-center">
+            <h2 class="fw-bold mb-3">Why Choose HealthcareOS?</h2>
+            <p class="text-muted mb-5">Proven benefits for modern healthcare facilities</p>
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <div>
+                        <i class="bi bi-clock-history fs-1 text-success mb-3"></i>
+                        <br>
+                        <h6 class="fw-bold">Reduced Wait Times</h6>
+                        <p class="text-muted">Optimize patient flow and reduce average wait times by up to 40%</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div>
+                        <i class="bi bi-lightning-charge fs-1 text-success mb-3"></i>
+                        <br>
+                        <h6 class="fw-bold">Improved Efficiency</h6>
+                        <p class="text-muted">Streamline hospital operations with automated workflows</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div>
+                        <i class="bi bi-shield-check fs-1 text-success mb-3"></i>
+                        <br>
+                        <h6 class="fw-bold">Better Patient Care</h6>
+                        <p class="text-muted">Enhanced patient experience through digital solutions</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div>
+                        <i class="bi bi-graph-up-arrow fs-1 text-success mb-3"></i>
+                        <br>
+                        <h6 class="fw-bold">Data-Driven Insights</h6>
+                        <p class="text-muted">Make informed decisions with comprehensive analytics</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- City-Wide Integration Ready -->
+    <section class="py-5 bg-white">
+        <div class="container text-center">
+            <h2 class="fw-bold mb-3">City-Wide Integration Ready</h2>
+            <p class="text-muted mb-5">Designed to integrate seamlessly with Delhi’s existing healthcare infrastructure
+            </p>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="p-4 border rounded shadow-sm h-100">
+                        <i class="bi bi-check-circle fs-1 text-success mb-3"></i>
+                        <h6 class="fw-bold">NIC Compatible</h6>
+                        <p class="text-muted">Built to work with existing NIC modules and systems</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-4 border rounded shadow-sm h-100">
+                        <i class="bi bi-check-circle fs-1 text-success mb-3"></i>
+                        <h6 class="fw-bold">Scalable Architecture</h6>
+                        <p class="text-muted">Designed for hospital-level deployment with city-wide expansion</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-4 border rounded shadow-sm h-100">
+                        <i class="bi bi-check-circle fs-1 text-success mb-3"></i>
+                        <h6 class="fw-bold">Real-time Sync</h6>
+                        <p class="text-muted">Live data synchronization across all connected facilities</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Call to Action -->
+    <section class="py-5 cta-gradient text-white text-center">
+        <div class="container">
+            <h2 class="fw-bold mb-3">Ready to Experience Better Healthcare?</h2>
+            <p class="lead mb-4">MediCure is more than just software; it's a commitment to efficiency, clarity, and
+                exceptional patient care. Join us in transforming hospital operations for a healthier tomorrow.</p>
+            <a href="#" class="btn btn-light btn-lg rounded-pill fw-semibold">Get Started Today <i
+                    class="bi bi-arrow-right"></i></a>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="pt-5 pb-3 footer-bg text-white">
+        <div class="container">
+            <div class="row gy-4 justify-content-between">
+                <div class="col-md-4">
+                    <h5 class="fw-bold"><i class="bi bi-heart-pulse-fill text-success me-2"></i>MediCure</h5>
+                    <p>Making healthcare accessible, stress-free, and efficient for everyone.</p>
+                </div>
+                <div class="col-md-2">
+                    <h6 class="fw-bold">Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white text-decoration-none">Book Appointment</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Bed Availability</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Dashboard</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h6 class="fw-bold">Support</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white text-decoration-none">Help Center</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Contact Us</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h6 class="fw-bold">Contact</h6>
+                    <p class="mb-1"><i class="bi bi-telephone me-2"></i> +91-1800-MEDICARE</p>
+                    <p><i class="bi bi-envelope me-2"></i> support@medicure.health</p>
+                </div>
+            </div>
+            <hr class="my-4 border-light">
+            <div class="text-center small">&copy; 2024 MediCure. All rights reserved. | Designed for better healthcare
+                access.</div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
