@@ -1,0 +1,92 @@
+body {
+  background-color: #f3f6f8;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Card Styling */
+.login-card {
+  max-width: 500px;
+  width: 100%;
+  border-radius: 15px;
+  background-color: #ffffff;
+}
+
+/* Buttons */
+.btn-teal {
+  background-color: #00a698;
+  color: white;
+  border: none;
+  transition: 0.3s;
+}
+
+.btn-teal:hover {
+  background-color: #008c7a;
+  transform: translateY(-1px);
+}
+
+/* Tabs */
+.tab-buttons button,
+.tab-buttons a {
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-weight: 500;
+  padding: 10px 0;
+  background-color: #fff;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+}
+
+.active-tab {
+  background-color: #00a698 !important;
+  color: white !important;
+  border: none !important;
+}
+
+.tab-buttons a:hover,
+.tab-buttons button:hover {
+  background-color: #f5f5f5;
+}
+
+/* Inputs */
+.form-control {
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.form-control:focus {
+  border-color: #00a698;
+  box-shadow: 0 0 0 0.15rem rgba(0, 166, 152, 0.25);
+}
+
+/* Text Color */
+.text-teal {
+  color: #00a698;
+}
+
+/* Footer Styling */
+.footer-custom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  border-top: 1px solid #ddd;
+  background-color: #f8f9fa;
+  font-size: 0.9rem;
+}
+
+.footer-links span {
+  margin-right: 20px;
+  color: #6c757d;
+}
+
+.footer-socials a {
+  margin-left: 15px;
+  color: #6c757d;
+  font-size: 1.2rem;
+}
+
+.footer-socials a:hover {
+  color: #00a698;
+}
