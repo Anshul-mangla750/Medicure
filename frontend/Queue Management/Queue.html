@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OPD Queue Management</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Sidebar -->
+      <nav class="col-md-2 col-lg-2 d-md-block sidebar">
+        <div class="text-center mb-4 logo">
+          <img src="MediCure_Logo.jpg" alt="Logo" class="img-fluid">
+        </div>
+        <ul class="nav flex-column px-3">
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="bi bi-speedometer2 me-2"></i> Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#"><i class="bi bi-list-check me-2"></i> OPD Queue</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="bi bi-calendar-check me-2"></i> Appointments</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="bi bi-hospital me-2"></i> Admissions</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="bi bi-heart-pulse me-2"></i> Emergency</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Main Content -->
+      <main class="col-md-10 ms-sm-auto px-md-4">
+        <!-- Top Bar -->
+        <div class="d-flex justify-content-end align-items-center py-3 border-bottom">
+          <i class="bi bi-bell me-3 fs-5"></i>
+          <i class="bi bi-person-circle me-3 fs-5"></i>
+          <img src="https://via.placeholder.com/32" class="rounded-circle" alt="User">
+        </div>
+
+        <h2 class="mt-4">OPD Queue Management</h2>
+        <p class="text-muted">Queue Overview</p>
+
+        <!-- Stats Cards -->
+        <div class="row g-3 mb-4">
+          <div class="col-md-3">
+            <div class="card-stat text-center">
+              <h5>Total Patients</h5>
+              <h2>245</h2>
+              <p class="text-muted">Today's patients</p>
+              <a href="#" class="text-decoration-none">View Details</a>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card-stat text-center">
+              <h5>Avg. Wait Time</h5>
+              <h2>25 min</h2>
+              <p class="text-muted">Across all departments</p>
+              <a href="#" class="text-decoration-none">View Details</a>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card-stat text-center">
+              <h5>Patients in Queue</h5>
+              <h2>18</h2>
+              <p class="text-muted">Currently waiting</p>
+              <a href="#" class="text-decoration-none">View Details</a>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card-stat text-center">
+              <h5>Consultations Done</h5>
+              <h2>227</h2>
+              <p class="text-muted">Today's completed visits</p>
+              <a href="#" class="text-decoration-none">View Details</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Current Patient Queue Table -->
+        <div class="card p-3">
+          <h5>Current Patient Queue</h5>
+          <div class="table-responsive">
+            <table class="table align-middle">
+              <thead>
+                <tr>
+                  <th>TOKEN</th>
+                  <th>PATIENT NAME</th>
+                  <th>WAIT TIME</th>
+                  <th>STATUS</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>OPD001</td>
+                  <td>Alice Johnson</td>
+                  <td>10 min</td>
+                  <td><span class="status-badge status-waiting">Waiting</span></td>
+                </tr>
+                <tr>
+                  <td>OPD002</td>
+                  <td>Bob Smith</td>
+                  <td>5 min</td>
+                  <td><span class="status-badge status-waiting">Waiting</span></td>
+                </tr>
+                <tr>
+                  <td>OPD003</td>
+                  <td>Charlie Brown</td>
+                  <td>Consulting</td>
+                  <td><span class="status-badge status-consulting">Consulting</span></td>
+                </tr>
+                <tr>
+                  <td>OPD004</td>
+                  <td>Diana Prince</td>
+                  <td>15 min</td>
+                  <td><span class="status-badge status-waiting">Waiting</span></td>
+                </tr>
+                <tr>
+                  <td>OPD005</td>
+                  <td>Ethan Hunt</td>
+                  <td>20 min</td>
+                  <td><span class="status-badge status-waiting">Waiting</span></td>
+                </tr>
+                <tr>
+                  <td>OPD006</td>
+                  <td>Fiona Glenn</td>
+                  <td>12 min</td>
+                  <td><span class="status-badge status-waiting">Waiting</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- Bottom Section -->
+        <div class="row mt-4 g-4">
+          <!-- Doctor Availability -->
+          <div class="col-lg-6">
+            <div class="card p-3">
+              <h5 class="mb-3">Doctor Availability</h5>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <div>
+                    <strong>Dr. Emily White</strong><br>
+                    <small class="text-muted">General Physician</small>
+                  </div>
+                  <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" checked>
+                    <span class="badge bg-success ms-2">Available</span>
+                  </div>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <div>
+                    <strong>Dr. Alex Green</strong><br>
+                    <small class="text-muted">Pediatrician</small>
+                  </div>
+                  <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox">
+                    <span class="badge bg-danger ms-2">Busy</span>
+                  </div>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <div>
+                    <strong>Dr. Sarah Kim</strong><br>
+                    <small class="text-muted">Dermatologist</small>
+                  </div>
+                  <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" checked>
+                    <span class="badge bg-success ms-2">Available</span>
+                  </div>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <div>
+                    <strong>Dr. David Lee</strong><br>
+                    <small class="text-muted">Orthopedic</small>
+                  </div>
+                  <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox">
+                    <span class="badge bg-danger ms-2">Busy</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Notification & Admin Controls -->
+          <div class="col-lg-6">
+            <div class="card p-3 mb-4">
+              <h5 class="mb-3">Notification Settings</h5>
+              <div class="d-flex justify-content-between align-items-center">
+                <span>SMS Notifications</span>
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" checked>
+                </div>
+              </div>
+              <button class="btn btn-outline-primary mt-3 w-100">Update Settings</button>
+            </div>
+
+            <div class="card p-3">
+              <h5 class="mb-3">Admin Controls</h5>
+              <button class="btn btn-success w-100 mb-2"><i class="bi bi-person-check me-2"></i> Call Next
+                Patient</button>
+              <button class="btn btn-danger w-100"><i class="bi bi-arrow-counterclockwise me-2"></i> Reset
+                Queue</button>
+            </div>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

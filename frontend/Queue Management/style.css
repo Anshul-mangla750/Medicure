@@ -1,0 +1,77 @@
+body {
+  background-color: #f8f9fa;
+}
+.sidebar {
+  height: 100vh;
+  background-color: #ffffff;
+  border-right: 1px solid #dee2e6;
+  padding-top: 1rem;
+}
+.sidebar .nav-link {
+  color: #333;
+  font-weight: 500;
+}
+.sidebar .nav-link.active {
+  background-color: #f1f3f5;
+  border-radius: 8px;
+}
+.card-stat {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+.status-badge {
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+.status-waiting {
+  background-color: #f8d7da;
+  color: #842029;
+}
+.status-consulting {
+  background-color: #d1e7dd;
+  color: #0f5132;
+}
+.logo img {
+  max-width: 100px;
+  margin-bottom: 0.75rem;
+}
+.card {
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0px 2px 8px rgba(0,0,0,0.05);
+}
+
+.card h5 {
+  font-weight: 600;
+}
+
+.list-group-item {
+  border: none;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.list-group-item:last-child {
+  border-bottom: none;
+}
+
+.form-check-input {
+  width: 2.5em;
+  height: 1.4em;
+  cursor: pointer;
+}
+
+.badge {
+  font-size: 0.75rem;
+  padding: 0.4em 0.6em;
+}
+
+.btn {
+  font-weight: 500;
+  border-radius: 8px;
+  padding: 0.6rem;
+}
