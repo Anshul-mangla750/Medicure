@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Feather Icons CDN -->
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo">
+                <!-- <span class="logo-star">✱</span>
+                <span class="logo-text">logo</span> -->
+                <img src="MediCure_Logo.jpg" alt="MediCure Logo" class="logo-img me-2" style="width: 60px; height: 60px; margin-left: 45px">
+            </div>
+            
+            <nav class="nav-menu">
+                <ul>
+                    <li class="nav-item active">
+                        <i data-feather="grid"></i>
+                        <span>Dashboard</span>
+                    </li>
+                    <li class="nav-item">
+                        <i data-feather="users"></i>
+                        <span>OPD Queue</span>
+                    </li>
+                    <li class="nav-item">
+                        <i data-feather="calendar"></i>
+                        <span>Appointments</span>
+                    </li>
+                    <li class="nav-item">
+                        <i data-feather="user-plus"></i>
+                        <span>Admissions</span>
+                    </li>
+                    <li class="nav-item">
+                        <i data-feather="heart"></i>
+                        <span>Emergency</span>
+                    </li>
+                </ul>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <div class="footer-brand">
+                    <span class="brand-text">Medicine</span>
+                    <span class="brand-logo">Daily</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                <div class="header-actions">
+                    <i data-feather="bell" class="header-icon"></i>
+                    <i data-feather="message-square" class="header-icon"></i>
+                    <div class="user-avatar"></div>
+                </div>
+            </header>
+
+            <div class="dashboard-grid">
+                <!-- Row 1 -->
+                <!-- Upcoming Appointment Card -->
+                <div class="card">
+                    <h3 class="card-title">Upcoming Appointment</h3>
+                    <div class="appointment-status">Confirmed</div>
+                    <div class="appointment-date">October 26, 2024 at 10:30 AM</div>
+                    <div class="appointment-details">
+                        <div class="detail-row">
+                            <span class="label">Doctor:</span>
+                            <span class="value">Dr. Arya Sharma</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="label">Department:</span>
+                            <span class="value">Cardiology</span>
+                        </div>
+                    </div>
+                    <button class="btn-secondary">View Details</button>
+                </div>
+
+                <!-- OPD Queue Status Card -->
+                <div class="card">
+                    <h3 class="card-title">OPD Queue Status</h3>
+                    <div class="queue-info">
+                        <div class="queue-position">Your current position:</div>
+                        <div class="queue-number">3</div>
+                        <div class="queue-wait">Estimated wait: 15 minutes</div>
+                    </div>
+                    <div class="queue-doctor">
+                        <span class="label">Doctor:</span>
+                        <span class="value">Dr. Rahul Verma</span>
+                    </div>
+                    <button class="btn-primary">Join Queue</button>
+                </div>
+
+                <!-- Bed Assignment Card -->
+                <div class="card">
+                    <h3 class="card-title">Bed Assignment</h3>
+                    <div class="bed-details">
+                        <div class="detail-row">
+                            <span class="label">Ward:</span>
+                            <span class="value">General Ward</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="label">Room:</span>
+                            <span class="value">203</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="label">Bed No:</span>
+                            <span class="value">B-7</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="label">Attending Physician:</span>
+                            <span class="value">Dr. Priya Desai</span>
+                        </div>
+                    </div>
+                    <button class="btn-secondary">View Ward Map</button>
+                </div>
+
+                <!-- Latest Notifications Card -->
+                <div class="card">
+                    <h3 class="card-title">Latest Notifications</h3>
+                    <div class="notifications">
+                        <div class="notification-item">
+                            <div class="notification-content">
+                                <div class="notification-text">Your lab results are ready. Please check your patient portal.</div>
+                                <div class="notification-time">2 hours ago</div>
+                            </div>
+                        </div>
+                        <div class="notification-item">
+                            <div class="notification-content">
+                                <div class="notification-text">Reminder: Your appointment with Dr. Sharma is tomorrow.</div>
+                                <div class="notification-time">Yesterday</div>
+                            </div>
+                        </div>
+                        <div class="notification-item">
+                            <div class="notification-content">
+                                <div class="notification-text">Hospital will be conducting routine maintenance tonight from 10 PM to 2 AM.</div>
+                                <div class="notification-time">3 days ago</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 2 -->
+                <!-- Quick Actions Card -->
+                <div class="card">
+                    <h3 class="card-title">Quick Actions</h3>
+                    <div class="actions-list">
+                        <button class="btn-primary">Book New Appointment</button>
+                        <button class="btn-secondary">View Medical Records</button>
+                        <button class="btn-secondary">Contact Support</button>
+                    </div>
+                </div>
+
+                <!-- Health Trends Overview Card -->
+                <div class="card">
+                    <h3 class="card-title">Health Trends Overview</h3>
+                    <div class="chart-placeholder">
+                        <div class="chart-description">
+                            Illustration photo of a line chart showing an upward trend, minimalist, composed with golden ratio and balanced negative space
+                        </div>
+                        <div class="chart-note">
+                            Detailed health metrics coming soon. Stay tuned for personalized insights.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Patient Resources Card -->
+                <div class="card">
+                    <h3 class="card-title">Patient Resources</h3>
+                    <div class="resources-description">
+                        Explore helpful articles and frequently asked questions to manage your health journey.
+                    </div>
+                    <button class="btn-primary">Go to Resources</button>
+                </div>
+
+                <!-- Feedback & Suggestions Card -->
+                <div class="card">
+                    <h3 class="card-title">Feedback & Suggestions</h3>
+                    <div class="feedback-description">
+                        Help us improve by sharing your experience and suggestions.
+                    </div>
+                    <button class="btn-primary">Provide Feedback</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Initialize Feather Icons
+        feather.replace();
+    </script>
+</body>
+</html>
