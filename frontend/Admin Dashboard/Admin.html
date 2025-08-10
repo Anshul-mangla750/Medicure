@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Admin Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo-section">
+                <div class="logo">
+                    <!-- <i class="fas fa-plus-circle logo-icon"></i>
+                    <span class="logo-text">logo</span> -->
+                    <img src="MediCure_Logo.jpg" alt="MediCure Logo" class="logo-img me-2" style="width: 65px; height: 65px; margin-left: 45px">
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="nav-item active">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-th-large nav-icon"></i>
+                            <span>Admin Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-list nav-icon"></i>
+                            <span>OPD Queue</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-bed nav-icon"></i>
+                            <span>Bed Management</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-user-plus nav-icon"></i>
+                            <span>Admissions</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-heart nav-icon"></i>
+                            <span>Emergency</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-boxes nav-icon"></i>
+                            <span>Inventory</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Header -->
+            <div class="header">
+                <h1 class="page-title">Admin Dashboard</h1>
+                <div class="header-actions">
+                    <i class="fas fa-search header-icon"></i>
+                    <i class="fas fa-bell header-icon"></i>
+                    <div class="user-avatar">
+                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=32&h=32&fit=crop&crop=face" alt="User" class="avatar-img">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="stats-section">
+                <div class="row g-3">
+                    <div class="col-md-3">
+                        <div class="stat-card">
+                            <div class="stat-header">
+                                <span class="stat-title">Total Beds</span>
+                                <i class="fas fa-expand-arrows-alt stat-icon"></i>
+                            </div>
+                            <div class="stat-value">350</div>
+                            <div class="stat-change positive">+5 Beds</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stat-card">
+                            <div class="stat-header">
+                                <span class="stat-title">Occupied Beds</span>
+                                <i class="fas fa-calendar-alt stat-icon"></i>
+                            </div>
+                            <div class="stat-value">285</div>
+                            <div class="stat-change negative">-1 today</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stat-card">
+                            <div class="stat-header">
+                                <span class="stat-title">Available Beds</span>
+                                <i class="fas fa-list stat-icon"></i>
+                            </div>
+                            <div class="stat-value">65</div>
+                            <div class="stat-change positive">+2 today</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stat-card">
+                            <div class="stat-header">
+                                <span class="stat-title">Current OPD Queue</span>
+                                <i class="fas fa-align-left stat-icon"></i>
+                            </div>
+                            <div class="stat-value">23</div>
+                            <div class="stat-change neutral">+3 in last hour</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts Section -->
+            <div class="charts-section">
+                <div class="row g-3">
+                    <!-- Bed Occupancy Trends -->
+                    <div class="col-md-7">
+                        <div class="chart-card">
+                            <div class="chart-header">
+                                <h3>Bed Occupancy Trends</h3>
+                                <p>Daily patient occupancy vs. available beds.</p>
+                            </div>
+                            <div class="chart-container">
+                                <div class="bar-chart">
+                                    <div class="chart-y-axis">
+                                        <span>300</span>
+                                        <span>225</span>
+                                        <span>150</span>
+                                        <span>75</span>
+                                        <span>0</span>
+                                    </div>
+                                    <div class="chart-bars">
+                                        <div class="bar-group">
+                                            <div class="bar-pair">
+                                                <div class="bar available" style="height: 180px;"></div>
+                                                <div class="bar occupied" style="height: 60px;"></div>
+                                            </div>
+                                            <span class="bar-label">Mon</span>
+                                        </div>
+                                        <div class="bar-group">
+                                            <div class="bar-pair">
+                                                <div class="bar available" style="height: 185px;"></div>
+                                                <div class="bar occupied" style="height: 55px;"></div>
+                                            </div>
+                                            <span class="bar-label">Tue</span>
+                                        </div>
+                                        <div class="bar-group">
+                                            <div class="bar-pair">
+                                                <div class="bar available" style="height: 175px;"></div>
+                                                <div class="bar occupied" style="height: 58px;"></div>
+                                            </div>
+                                            <span class="bar-label">Wed</span>
+                                        </div>
+                                        <div class="bar-group">
+                                            <div class="bar-pair">
+                                                <div class="bar available" style="height: 185px;"></div>
+                                                <div class="bar occupied" style="height: 55px;"></div>
+                                            </div>
+                                            <span class="bar-label">Thu</span>
+                                        </div>
+                                        <div class="bar-group">
+                                            <div class="bar-pair">
+                                                <div class="bar available" style="height: 190px;"></div>
+                                                <div class="bar occupied" style="height: 50px;"></div>
+                                            </div>
+                                            <span class="bar-label">Fri</span>
+                                        </div>
+                                        <div class="bar-group">
+                                            <div class="bar-pair">
+                                                <div class="bar available" style="height: 175px;"></div>
+                                                <div class="bar occupied" style="height: 58px;"></div>
+                                            </div>
+                                            <span class="bar-label">Sat</span>
+                                        </div>
+                                        <div class="bar-group">
+                                            <div class="bar-pair">
+                                                <div class="bar available" style="height: 155px;"></div>
+                                                <div class="bar occupied" style="height: 62px;"></div>
+                                            </div>
+                                            <span class="bar-label">Sun</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="chart-legend">
+                                    <div class="legend-item">
+                                        <span class="legend-color occupied"></span>
+                                        <span>Occupied</span>
+                                    </div>
+                                    <div class="legend-item">
+                                        <span class="legend-color available"></span>
+                                        <span>Available</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- OPD Queue Breakdown -->
+                    <div class="col-md-5">
+                        <div class="chart-card">
+                            <div class="chart-header">
+                                <h3>OPD Queue Breakdown</h3>
+                                <p>Patients by department.</p>
+                            </div>
+                            <div class="donut-chart-container">
+                                <div class="donut-chart">
+                                    <svg width="200" height="200" viewBox="0 0 200 200">
+                                        <!-- General Medicine (largest segment) -->
+                                        <circle cx="100" cy="100" r="60" fill="none" stroke="#14b8a6" stroke-width="40" 
+                                                stroke-dasharray="125 377" transform="rotate(-90 100 100)"/>
+                                        <!-- Pediatrics -->
+                                        <circle cx="100" cy="100" r="60" fill="none" stroke="#f59e0b" stroke-width="40" 
+                                                stroke-dasharray="85 377" stroke-dashoffset="-125" transform="rotate(-90 100 100)"/>
+                                        <!-- Orthopedics -->
+                                        <circle cx="100" cy="100" r="60" fill="none" stroke="#374151" stroke-width="40" 
+                                                stroke-dasharray="70 377" stroke-dashoffset="-210" transform="rotate(-90 100 100)"/>
+                                        <!-- Cardiology -->
+                                        <circle cx="100" cy="100" r="60" fill="none" stroke="#0ea5e9" stroke-width="40" 
+                                                stroke-dasharray="92 377" stroke-dashoffset="-280" transform="rotate(-90 100 100)"/>
+                                    </svg>
+                                </div>
+                                <div class="donut-legend">
+                                    <div class="legend-item">
+                                        <span class="legend-dot general"></span>
+                                        <span>General Medicine</span>
+                                    </div>
+                                    <div class="legend-item">
+                                        <span class="legend-dot pediatrics"></span>
+                                        <span>Pediatrics</span>
+                                    </div>
+                                    <div class="legend-item">
+                                        <span class="legend-dot orthopedics"></span>
+                                        <span>Orthopedics</span>
+                                    </div>
+                                    <div class="legend-item">
+                                        <span class="legend-dot cardiology"></span>
+                                        <span>Cardiology</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Section -->
+            <div class="bottom-section">
+                <div class="row g-3">
+                    <!-- Recent Discharges -->
+                    <div class="col-md-7">
+                        <div class="table-card">
+                            <div class="table-header">
+                                <h3>Recent Discharges</h3>
+                                <p>Latest patients discharged from the hospital.</p>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Patient ID</th>
+                                            <th>Name</th>
+                                            <th>Department</th>
+                                            <th>Discharge Date</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>P00123</td>
+                                            <td>Alice Smith</td>
+                                            <td><span class="department-badge pediatrics">Pediatrics</span></td>
+                                            <td>2024-07-25</td>
+                                        </tr>
+                                        <tr>
+                                            <td>P00122</td>
+                                            <td>Robert Johnson</td>
+                                            <td><span class="department-badge cardiology">Cardiology</span></td>
+                                            <td>2024-07-25</td>
+                                        </tr>
+                                        <tr>
+                                            <td>P00121</td>
+                                            <td>Emily Davis</td>
+                                            <td><span class="department-badge general">General Medicine</span></td>
+                                            <td>2024-07-24</td>
+                                        </tr>
+                                        <tr>
+                                            <td>P00120</td>
+                                            <td>Michael Brown</td>
+                                            <td><span class="department-badge orthopedics">Orthopedics</span></td>
+                                            <td>2024-07-24</td>
+                                        </tr>
+                                        <tr>
+                                            <td>P00119</td>
+                                            <td>Jessica White</td>
+                                            <td><span class="department-badge emergency">Emergency</span></td>
+                                            <td>2024-07-23</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Inventory Low Stock Alerts -->
+                    <div class="col-md-5">
+                        <div class="alert-card">
+                            <div class="alert-header">
+                                <h3>Inventory Low Stock Alerts</h3>
+                                <p>Items nearing reorder thresholds.</p>
+                            </div>
+                            <div class="alert-items">
+                                <div class="alert-item">
+                                    <i class="fas fa-exclamation-triangle alert-icon"></i>
+                                    <div class="alert-content">
+                                        <div class="alert-title">Surgical Masks</div>
+                                        <div class="alert-subtitle">Only 150 units left</div>
+                                    </div>
+                                </div>
+                                <div class="alert-item">
+                                    <i class="fas fa-exclamation-triangle alert-icon"></i>
+                                    <div class="alert-content">
+                                        <div class="alert-title">Disposable Gloves</div>
+                                        <div class="alert-subtitle">Only 200 units left</div>
+                                    </div>
+                                </div>
+                                <div class="alert-item">
+                                    <i class="fas fa-exclamation-triangle alert-icon"></i>
+                                    <div class="alert-content">
+                                        <div class="alert-title">IV Fluid Bags</div>
+                                        <div class="alert-subtitle">Only 75 units left</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Doctor Availability Section -->
+            <div class="doctors-section">
+                <div class="doctors-header">
+                    <h3>Doctor Availability</h3>
+                </div>
+                <div class="row g-3">
+                    <div class="col-md-3">
+                        <div class="doctor-card">
+                            <div class="doctor-info">
+                                <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=48&h=48&fit=crop&crop=face" alt="Dr. Anya Sharma" class="doctor-avatar">
+                                <div class="doctor-details">
+                                    <h4>Dr. Anya Sharma</h4>
+                                    <p>General Medicine</p>
+                                </div>
+                            </div>
+                            <div class="doctor-status online">online</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="doctor-card">
+                            <div class="doctor-info">
+                                <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=48&h=48&fit=crop&crop=face" alt="Dr. Ben Carter" class="doctor-avatar">
+                                <div class="doctor-details">
+                                    <h4>Dr. Ben Carter</h4>
+                                    <p>Cardiology</p>
+                                </div>
+                            </div>
+                            <div class="doctor-status busy">busy</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="doctor-card">
+                            <div class="doctor-info">
+                                <img src="image.png" alt="Dr. Chloe Lee" class="doctor-avatar">
+                                <div class="doctor-details">
+                                    <h4>Dr. Chloe Lee</h4>
+                                    <p>Pediatrics</p>
+                                </div>
+                            </div>
+                            <div class="doctor-status online">online</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="doctor-card">
+                            <div class="doctor-info">
+                                <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=48&h=48&fit=crop&crop=face" alt="Dr. David Kim" class="doctor-avatar">
+                                <div class="doctor-details">
+                                    <h4>Dr. David Kim</h4>
+                                    <p>Orthopedics</p>
+                                </div>
+                            </div>
+                            <div class="doctor-status offline">offline</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
