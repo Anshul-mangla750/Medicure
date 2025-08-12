@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Inventory Management Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <!-- <i class="fas fa-asterisk"></i> -->
+                     <img src="MediCure_Logo.jpg" alt="Logo" class="logo-image">
+                    <!-- <span>logo</span> -->
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul>
+                    <li>
+                        <a href="#" class="nav-item">
+                            <i class="fas fa-th-large"></i>
+                            <span>Admin Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-item">
+                            <i class="fas fa-users"></i>
+                            <span>OPD Queue</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-item">
+                            <i class="fas fa-bed"></i>
+                            <span>Bed Management</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-item">
+                            <i class="fas fa-user-plus"></i>
+                            <span>Admissions</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-item">
+                            <i class="fas fa-heart"></i>
+                            <span>Emergency</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-item active">
+                            <i class="fas fa-boxes"></i>
+                            <span>Inventory</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="main-header">
+                <h1>Inventory Management</h1>
+                <div class="header-actions">
+                    <button class="notification-btn">
+                        <i class="fas fa-bell"></i>
+                    </button>
+                    <button class="settings-btn">
+                        <i class="fas fa-cog"></i>
+                    </button>
+                    <div class="user-avatar">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%234299e1'/%3E%3Cpath d='M16 14c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z' fill='white'/%3E%3C/svg%3E" alt="User Avatar">
+                    </div>
+                </div>
+            </header>
+
+            <!-- Statistics Cards -->
+            <section class="stats-section">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-content">
+                            <h3>Total Items</h3>
+                            <div class="stat-number">58</div>
+                            <div class="stat-description">All registered supplies</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-content">
+                            <h3>Low Stock Items</h3>
+                            <div class="stat-number">3</div>
+                            <div class="stat-description">Needs attention soon</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-content">
+                            <h3>Out of Stock Items</h3>
+                            <div class="stat-number">1</div>
+                            <div class="stat-description">Critical, reorder immediately</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-content">
+                            <h3>Recent Additions</h3>
+                            <div class="stat-number">24</div>
+                            <div class="stat-description">In the last 7 days</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Inventory Table Section -->
+            <section class="inventory-section">
+                <div class="section-header">
+                    <h2>Current Stock Levels</h2>
+                    <p>Detailed overview of all medical supplies in the hospital.</p>
+                </div>
+
+                <div class="table-controls">
+                    <div class="search-filter-group">
+                        <input type="text" class="search-input" placeholder="Search items by name...">
+                        <select class="filter-select">
+                            <option>All Statuses</option>
+                            <option>In Stock</option>
+                            <option>Low Stock</option>
+                            <option>Out of Stock</option>
+                        </select>
+                        <select class="filter-select">
+                            <option>All Categories</option>
+                            <option>Medical Consumables</option>
+                            <option>Medical Devices</option>
+                            <option>Pharmaceuticals</option>
+                        </select>
+                    </div>
+                    <button class="refresh-btn">
+                        <i class="fas fa-sync-alt"></i>
+                        Refresh
+                    </button>
+                </div>
+
+                <div class="table-container">
+                    <table class="inventory-table">
+                        <thead>
+                            <tr>
+                                <th>Item ID</th>
+                                <th>Item Name</th>
+                                <th>Category</th>
+                                <th>Stock Level</th>
+                                <th>Unit</th>
+                                <th>Status</th>
+                                <th>Last Updated</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>MED-001</td>
+                                <td>N95 Respirator Masks</td>
+                                <td>Medical Consumables</td>
+                                <td>150</td>
+                                <td>pcs</td>
+                                <td><span class="status-badge in-stock">In Stock</span></td>
+                                <td>2024-07-28</td>
+                                <td>
+                                    <button class="action-btn edit"><i class="fas fa-edit"></i></button>
+                                    <button class="action-btn delete"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>EQU-005</td>
+                                <td>Digital Thermometer</td>
+                                <td>Medical Devices</td>
+                                <td>25</td>
+                                <td>pcs</td>
+                                <td><span class="status-badge low-stock">Low Stock</span></td>
+                                <td>2024-07-27</td>
+                                <td>
+                                    <button class="action-btn edit"><i class="fas fa-edit"></i></button>
+                                    <button class="action-btn delete"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>PHM-012</td>
+                                <td>Paracetamol 500mg</td>
+                                <td>Pharmaceuticals</td>
+                                <td>500</td>
+                                <td>blister packs</td>
+                                <td><span class="status-badge in-stock">In Stock</span></td>
+                                <td>2024-07-29</td>
+                                <td>
+                                    <button class="action-btn edit"><i class="fas fa-edit"></i></button>
+                                    <button class="action-btn delete"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>MED-002</td>
+                                <td>Sterile Surgical Gloves</td>
+                                <td>Medical Consumables</td>
+                                <td>30</td>
+                                <td>boxes</td>
+                                <td><span class="status-badge low-stock">Low Stock</span></td>
+                                <td>2024-07-28</td>
+                                <td>
+                                    <button class="action-btn edit"><i class="fas fa-edit"></i></button>
+                                    <button class="action-btn delete"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>EQU-010</td>
+                                <td>Blood Pressure Monitor</td>
+                                <td>Medical Devices</td>
+                                <td>5</td>
+                                <td>pcs</td>
+                                <td><span class="status-badge low-stock">Low Stock</span></td>
+                                <td>2024-07-25</td>
+                                <td>
+                                    <button class="action-btn edit"><i class="fas fa-edit"></i></button>
+                                    <button class="action-btn delete"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>PHM-020</td>
+                                <td>Amoxicillin 250mg</td>
+                                <td>Pharmaceuticals</td>
+                                <td>0</td>
+                                <td>bottles</td>
+                                <td><span class="status-badge out-of-stock">Out of Stock</span></td>
+                                <td>2024-07-29</td>
+                                <td>
+                                    <button class="action-btn edit"><i class="fas fa-edit"></i></button>
+                                    <button class="action-btn delete"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>MED-003</td>
+                                <td>First Aid Kit (Basic)</td>
+                                <td>Medical Consumables</td>
+                                <td>75</td>
+                                <td>kits</td>
+                                <td><span class="status-badge in-stock">In Stock</span></td>
+                                <td>2024-07-28</td>
+                                <td>
+                                    <button class="action-btn edit"><i class="fas fa-edit"></i></button>
+                                    <button class="action-btn delete"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>EQU-015</td>
+                                <td>Stethoscope</td>
+                                <td>Medical Devices</td>
+                                <td>10</td>
+                                <td>pcs</td>
+                                <td><span class="status-badge in-stock">In Stock</span></td>
+                                <td>2024-07-27</td>
+                                <td>
+                                    <button class="action-btn edit"><i class="fas fa-edit"></i></button>
+                                    <button class="action-btn delete"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="pagination">
+                    <button class="pagination-btn prev">
+                        <i class="fas fa-chevron-left"></i>
+                        Previous
+                    </button>
+                    <div class="pagination-numbers">
+                        <button class="pagination-number active">1</button>
+                        <button class="pagination-number">2</button>
+                        <button class="pagination-number">3</button>
+                    </div>
+                    <button class="pagination-btn next">
+                        Next
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Bottom Section with Activity and Reorder -->
+            <section class="bottom-section">
+                <div class="bottom-grid">
+                    <!-- Recent Activity -->
+                    <div class="activity-card">
+                        <h3>Recent Inventory Activity</h3>
+                        <p class="card-subtitle">Latest movements and updates in your stock.</p>
+                        
+                        <div class="activity-list">
+                            <div class="activity-item">
+                                <div class="activity-icon success">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <div class="activity-text">50 units of Syringes received.</div>
+                                    <div class="activity-time">July 28, 2024 at 10:30 AM</div>
+                                </div>
+                            </div>
+                            
+                            <div class="activity-item">
+                                <div class="activity-icon warning">
+                                    <i class="fas fa-minus"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <div class="activity-text">20 units of Surgical Gloves dispensed.</div>
+                                    <div class="activity-time">July 28, 2024 at 09:15 PM</div>
+                                </div>
+                            </div>
+                            
+                            <div class="activity-item">
+                                <div class="activity-icon info">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <div class="activity-text">Digital Thermometer stock low, reorder alert triggered.</div>
+                                    <div class="activity-time">July 27, 2024 at 09:00 AM</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Reorder -->
+                    <div class="reorder-card">
+                        <h3>Quick Reorder Request</h3>
+                        <p class="card-subtitle">Quickly submit a request for urgent supply replenishment.</p>
+                        
+                        <form class="reorder-form">
+                            <div class="form-group">
+                                <label for="item-name">Item Name</label>
+                                <input type="text" id="item-name" placeholder="e.g., Pain Killers" class="form-input">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="quantity">Quantity</label>
+                                <input type="number" id="quantity" placeholder="e.g., 100" class="form-input">
+                            </div>
+                            
+                            <button type="submit" class="reorder-btn">Request Reorder</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
